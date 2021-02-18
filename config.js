@@ -7,8 +7,8 @@ var Config = {
         x:1,
         y:1
     },
-    Playername1: "Игрок 1",
-    Playername2: "Игрок 2"
+    Playername1: "Player 1",
+    Playername2: "Player 2"
 }
 
 module.exports = Config
