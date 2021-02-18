@@ -89,8 +89,8 @@ screen.append(InfoBox);
 screen.append(GameBox);
 InfoBox.setContent(
     "{center}{bold}Основная информация{/bold}{/center}\n"
-    + "Escape — Закрыть игру\n"
-    + "F5 — начать сначала"
+    + "Escape — Quit\n"
+    + "F5 — Restart"
 );
 
 // Listen for 'control' keys

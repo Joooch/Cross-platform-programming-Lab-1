@@ -25,7 +25,7 @@ var Game = class {
     }
     HandleWin( ){
         this.Status = "result";
-        this.CallbackBox.setContent( "{center}" + "Выиграл " + this.ActivePlayer.Name + "{/center}" );
+        this.CallbackBox.setContent( "{center}" + "Won " + this.ActivePlayer.Name + "{/center}" );
         this.CallbackBox.screen.render( );
     }
     Restart( ){
