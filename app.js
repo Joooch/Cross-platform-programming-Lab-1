@@ -206,11 +206,9 @@ GameBox.on( "render", function(){
         return;
     }
     setTimeout( ()=>{
-        FirstInitialized = true
-        Game.Init( StatusText )
-        StatusText.setContent( "{center}Идёт запуск..{/center}" );
-        StatusText.render( );
-        ClearScreeen( )
+        FirstInitialized = true;
+        Game.Init( StatusText );
+        ClearScreeen( );
     }, 200 );
 } )
 GameBox.focus();
