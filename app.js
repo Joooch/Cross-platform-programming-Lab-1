@@ -88,7 +88,7 @@ var StatusText = blessed.box({
 screen.append(InfoBox);
 screen.append(GameBox);
 InfoBox.setContent(
-    "{center}{bold}Основная информация{/bold}{/center}\n"
+    "{center}{bold}Keybinds{/bold}{/center}\n"
     + "Escape — Quit\n"
     + "F5 — Restart"
 );
