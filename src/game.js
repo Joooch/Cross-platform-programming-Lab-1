@@ -4,13 +4,16 @@ var Player = require( "./player" )
 var Config = require( "../config" )
 
 var Game = class {
-    Status = 'dead';
-    /*
-        dead = uninitialized map
-        alive = the game is ON
-        result = displaying game results, wait for restart
-    */
+    constructor( ){
+        this.Status = "dead"
+        /*
+            dead = uninitialized map
+            alive = the game is ON
+            result = displaying game results, wait for restart
+        */
+    }
     Init( CallbackBox ){
+        
         this.CallbackBox = CallbackBox;
 
         this.Map = new Map( 15, 15 );
