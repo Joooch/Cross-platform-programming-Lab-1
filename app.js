@@ -1,31 +1,18 @@
 // Import library
 var blessed = require('blessed');
-const { debug } = require('console');
-const { PassThrough } = require('stream');
 
 var Config = require( "./config" )
 
 var program = blessed.program();
 
-var Game = require( "./src/game" )
-var Game = new Game;
+var GameClass = require( "./src/game" );
+var Game = new GameClass( );
 
 // Create a screen object
 var screen = blessed.screen( {
     smartCSR: true
 } );
 screen.title = 'Gomoku';
-
-var I = 0;
-function debuglog( text ){
-    I++;
-    program.move( 20, I );
-    program.bg( "blue" );
-        program.write( text );
-    program.bg( "!blue" );
-
-    Game.ActivePlayer.focus( );
-}
 
 // Create outlined-box (game area)
 var GameBox = blessed.box({
@@ -115,9 +102,11 @@ function FindFree( x, y, dirX, dirY ){
 }
 screen.key(["left","right","up","down"], function( _, data ){
     if( Game.Status != "alive" ){ return; }
+
+    let result;
     switch (data.name) {
         case "left":
-            var result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, -1, 0 );
+            result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, -1, 0 );
             if( !result ){
                 return;
             }
@@ -125,7 +114,7 @@ screen.key(["left","right","up","down"], function( _, data ){
             break;
 
         case "right":
-            var result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 1, 0 );
+            result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 1, 0 );
             if( !result ){
                 return;
             }
@@ -133,7 +122,7 @@ screen.key(["left","right","up","down"], function( _, data ){
             break;
 
         case "up":
-            var result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 0, -1 );
+            result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 0, -1 );
             if( !result ){
                 return;
             }
@@ -141,7 +130,7 @@ screen.key(["left","right","up","down"], function( _, data ){
             break;
 
         case "down":
-            var result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 0, 1 );
+            result = FindFree( Game.ActivePlayer.x, Game.ActivePlayer.y, 0, 1 );
             if( !result ){
                 return;
             }
@@ -193,7 +182,7 @@ screen.on('keypress',function( key, data ){
 })
 
 // Listen for quit command
-screen.key('escape', function(ch, key) {
+screen.key('escape', function( ) {
     return process.exit(0);
 });
 
