@@ -25,7 +25,7 @@ var GameBox = blessed.box({
     },
     style: {
         fg: 'white',
-        bg: 'magenta',
+        bg: '#5c5cff',
         border: {
             fg: 'white'
         },
@@ -50,7 +50,7 @@ var InfoBox = blessed.box({
     },
     style: {
         fg: 'white',
-        bg: 'magenta',
+        bg: '#5c5cff',
         border: {
             fg: 'white'
         }
@@ -159,10 +159,10 @@ screen.on('keypress',function( key, data ){
         if( Game.Map.GetChar( Game.ActivePlayer.x, Game.ActivePlayer.y ) != false ){
             return;
     }
-        program.bg( "magenta" );
-        program.write( Game.ActivePlayer.Char );
-        program.left()
-        program.bg( "!magenta" );
+        program.bg( "#5c5cff" );
+            program.write( Game.ActivePlayer.Char );
+            program.left()
+        program.bg( "!#5c5cff" ); // is it right?
 
         Game.Map.SetChar( Game.ActivePlayer.x, Game.ActivePlayer.y, Game.ActivePlayer.Char );
 
