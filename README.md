@@ -5,7 +5,7 @@ Javascript gomoku game using the Blessed terminal library
 ---
 ## Requirements
 
-For development, you will only need Node.js and a node global package, [Blessed](https://github.com/chjj/blessed), installed in your environement.
+For development and running, you will only need Node.js and a node global package, [Blessed](https://github.com/chjj/blessed), installed in your environement.
 
 ### Node
 - #### Node installation on Windows
